@@ -16,7 +16,7 @@ async def ytdl(_, message):
     try:
         if userLastDownloadTime > datetime.now():
             wait_time = round((userLastDownloadTime - datetime.now()).total_seconds() / 60, 2)
-            await message.reply_text(f"**- أنـتظر {wait_time} من الـدقائق قبل الـطلب الثاني**")
+            await message.reply_text(f"** أنتظر {wait_time} من الدقائق قبل الطلب الثاني**")
             return
     except:
         pass
@@ -31,10 +31,10 @@ async def ytdl(_, message):
                                      timedelta(minutes=youtube_next_fetch)
 
     except Exception:
-        await message.reply_text("**خـطـأ بالتعرق على المعلومات \nأحـتمال أن ايبي الـيوتيوب هذا محـظور \n#خـطأ**")
+        await message.reply_text("**خطأ بالتعرف على المعلومات \nأحتمال أن ايبي الـيوتيوب هذا محـظور \n#خـطأ**")
         return
     buttons = InlineKeyboardMarkup(list(create_buttons(formats)))
-    sentm = await message.reply_text("**يتم معالجة رابط اليوتيوب 🔍**")
+    sentm = await message.reply_text("**يتم معالجة رابط اليوتيوب .**")
     try:
         # Todo add webp image support in thumbnail by default not supported by pyrogram
         # https://www.youtube.com/watch?v=lTTajzrSkCw
@@ -50,7 +50,7 @@ async def ytdl(_, message):
     except Exception as e:
         print(e)
         try:
-            thumbnail_url = "https://telegra.ph/file/8819dc0795f00beb8c807.jpg"
+            thumbnail_url = "https://telegra.ph/file/72f786c172682427a528c.jpg"
             await message.reply_photo(thumbnail_url, caption=title, reply_markup=buttons)
         except Exception as e:
             await sentm.edit(
