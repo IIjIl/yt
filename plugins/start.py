@@ -7,6 +7,6 @@ async def start(client, message):
     joinButton = InlineKeyboardMarkup([
         [InlineKeyboardButton("- Hasoni Alnajar", url="https://t.me/HssHH")],
     ])
-    welcomed = f"**اهلا بك <b>{message.from_user.first_name}</b> عزيزي في بوت التحميل من اليوتيوب\n\n- يستطيع البوت التحميل بعده صيغ\n- فقط ارسل الرابط ليتم التحميل**"
+    welcomed = f"**اهلا بك <b>{message.from_user.first_name}</b> عزيزي في بوت التحميل من اليوتيوب\n\n- يستطيع البوت التحميل بعده صيغ\n- فقط ارسل الرابط ليتم التحميل\n\nملاحظة : البوت يقوم بتحميل فقط مقاطع الفيديو ولا يحمل مقاطع الريلز**"
     await message.reply_text(welcomed, reply_markup=joinButton)
     raise StopPropagation
