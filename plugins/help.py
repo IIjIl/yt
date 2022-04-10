@@ -3,5 +3,5 @@ from pyrogram import Client, Filters
 
 @Client.on_message(Filters.command(["help"]))
 async def start(client, message):
-    helptxt = f"- **هذا البوت لا يدعم قوائم التشغيل حاليا**\n- **فقط ارسل رابط الفيديو او الاغنية المراد تحميله**"
+    helptxt = f"**- أي استفسار أو خطأ أو مشكلة تواجهك راسل المطور :** @HssHH"
     await message.reply_text(helptxt)
